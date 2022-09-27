@@ -7,5 +7,5 @@ metadata:
     github.com/project-slug: canal-consulting/egg-basket
 spec:
   type: website
-  owner: bryan.galvin@bestegg.com
+  owner: bcgalvin
   lifecycle: experimental
