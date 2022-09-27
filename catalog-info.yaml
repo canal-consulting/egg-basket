@@ -4,6 +4,7 @@ metadata:
   name: backstage
   description: The backstage app for Best Egg Data Science
   annotations:
+    backstage.io/techdocs-ref: dir:.
     github.com/project-slug: canal-consulting/egg-basket
 spec:
   type: website
