@@ -12,7 +12,7 @@ import { Router } from 'express';
 export default async function createPlugin(
   env: PluginEnvironment,
 ): Promise<Router> {
-  // Initialize a connection to a search engine.
+
   const searchEngine = new LunrSearchEngine({
     logger: env.logger,
   });
@@ -24,13 +24,9 @@ export default async function createPlugin(
   const schedule = env.scheduler.createScheduledTaskRunner({
     frequency: { minutes: 10 },
     timeout: { minutes: 15 },
-    // A 3 second delay gives the backend server a chance to initialize before
-    // any collators are executed, which may attempt requests against the API.
     initialDelay: { seconds: 3 },
   });
 
-  // Collators are responsible for gathering documents known to plugins. This
-  // collator gathers entities from the software catalog.
   indexBuilder.addCollator({
     schedule,
     factory: DefaultCatalogCollatorFactory.fromConfig(env.config, {
@@ -39,7 +35,6 @@ export default async function createPlugin(
     }),
   });
 
-  // collator gathers entities from techdocs.
   indexBuilder.addCollator({
     schedule,
     factory: DefaultTechDocsCollatorFactory.fromConfig(env.config, {
@@ -49,8 +44,6 @@ export default async function createPlugin(
     }),
   });
 
-  // The scheduler controls when documents are gathered from collators and sent
-  // to the search engine for indexing.
   const { scheduler } = await indexBuilder.build();
   scheduler.start();
 

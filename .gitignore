@@ -46,6 +46,7 @@ site
 
 # Local configuration files
 *.local.yaml
+*.pem
 
 # Sensitive credentials
 *-credentials.yaml

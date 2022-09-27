@@ -1,0 +1,18 @@
+site_name: ${{values.name | dump}}
+site_description: ${{values.description | dump}}
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Introduction: index.md
+  - Collaboration:
+      - Collaborative Publishing: collaboration/collaborative-publishing.md
+      - Teams and Permissions: collaboration/teams-and-permissions.md
+  - Advanced:
+      - Docsify Guide: advanced/docsify.md
+      - Markdown Guide: advanced/markdown-features.md
+      - Mermaide Guide: advanced/mermaid.md
+      - publishing-settings: advanced/publishing-settings.md
+  - Subpage: sub-page.md
+  - Extensions: extensions.md
