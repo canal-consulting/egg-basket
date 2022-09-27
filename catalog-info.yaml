@@ -6,6 +6,9 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: canal-consulting/egg-basket
+  tags:
+    - mlops
+    - bryan
 spec:
   type: website
   owner: bcgalvin
