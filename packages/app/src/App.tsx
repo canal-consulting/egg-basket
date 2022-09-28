@@ -1,6 +1,8 @@
 import React from 'react';
 import {Navigate, Route} from 'react-router';
 import {apiDocsPlugin} from '@backstage/plugin-api-docs';
+import {HomepageCompositionRoot} from '@backstage/plugin-home';
+import {HomePage} from './components/home/HomePage';
 import {
     CatalogEntityPage,
     CatalogIndexPage,
@@ -57,7 +59,9 @@ const AppRouter = app.getRouter();
 
 const routes = (
     <FlatRoutes>
-        <Navigate key="/" to="catalog"/>
+        <Route path="/" element={<HomepageCompositionRoot/>}>
+            <HomePage/>
+        </Route>
         <Route path="/catalog" element={<CatalogIndexPage/>}/>
         <Route
             path="/catalog/:namespace/:kind/:name"
