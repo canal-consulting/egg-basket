@@ -1,68 +1,45 @@
+
 import React from 'react';
-
-
-import {Content, Page, InfoCard} from '@backstage/core-components';
-import {
-    HomePageToolkit,
-    HomePageCompanyLogo,
-    HomePageStarredEntities,
-    TemplateBackstageLogo,
-    TemplateBackstageLogoIcon
-} from '@backstage/plugin-home';
-
-import {Grid, makeStyles} from '@material-ui/core';
-
-
-
-
-const useLogoStyles = makeStyles(theme => ({
-    container: {
-        margin: theme.spacing(5, 0),
-    },
-    svg: {
-        width: 'auto',
-        height: 100,
-    },
-    path: {
-        fill: '#7df3e1',
-    },
-}));
+import Grid from '@material-ui/core/Grid';
+import { HomePageToolkit } from '@backstage/plugin-home';
+import { HomePageMarkdown } from '@roadiehq/backstage-plugin-home-markdown';
+import { Content, PageWithHeader } from '@backstage/core-components';
 
 export const HomePage = () => {
-    /* We will shortly compose a pretty homepage here. */
-    // return <h1>Welcome to djimenez Backstage!</h1>;
-
-    const {svg, path, container} = useLogoStyles();
-
-    return (<Page themeId="home">
-        <Content>
-            <Grid container justifyContent="center" spacing={6}>
-                <HomePageCompanyLogo
-                    className={container}
-                    logo={<TemplateBackstageLogo classes={{svg, path}}/>}
-                />
-
-                <Grid container item xs={12}>
+    return (
+        <PageWithHeader title="Home" themeId="home">
+            <Content>
+                <Grid container spacing={3}>
                     <Grid item xs={12} md={6}>
-                        <HomePageStarredEntities/>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <HomePageToolkit
-                            tools={Array(8).fill({
-                                url: '#',
-                                label: 'link',
-                                icon: <TemplateBackstageLogoIcon/>,
-                            })}
+                        <HomePageMarkdown
+                            title="Neeews!"
+                            owner="RoadieHQ"
+                            repo="roadie-backstage-plugins"
+                            path=".backstage/home-page.md"
                         />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <InfoCard title="Composable Section">
-                            {/* placeholder for content */}
-                            <div style={{height: 370}}/>
-                        </InfoCard>
+                        <HomePageMarkdown
+                            title="History"
+                            owner="RoadieHQ"
+                            repo="roadie-backstage-plugins"
+                            path=".backstage/home-page-test.md"
+                            branch="test-two-mdown"
+                        />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <HomePageToolkit
+                            tools={[
+                                {
+                                    label: 'Backstage',
+                                    url: 'https://github.com/backstage/backstage',
+                                    icon: <></>,
+                                },
+                            ]}
+                        />
                     </Grid>
                 </Grid>
-            </Grid>
-        </Content>
-    </Page>)
+            </Content>
+        </PageWithHeader>
+    );
 };
