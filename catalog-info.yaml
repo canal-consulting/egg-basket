@@ -8,8 +8,8 @@ metadata:
     github.com/project-slug: canal-consulting/egg-basket
   tags:
     - mlops
-    - bryan
+    - bryan-galvin
 spec:
   type: website
-  owner: bcgalvin
+  owner: bryan-galvin
   lifecycle: experimental
