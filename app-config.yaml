@@ -62,6 +62,14 @@ scaffolder:
   defaultCommitMessage: "New app created"
 
 catalog:
+  providers:
+    github:
+      providerId:
+        organization: 'canal-consulting'
+        catalogPath: '/catalog-info.yaml'
+    wildcardProviderId:
+      organization: 'canal-consulting' # string
+      catalogPath: '/**/*.yaml'
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
@@ -72,9 +80,11 @@ catalog:
       target: https://github.com/canal-consulting/backstage-templates/blob/main/terraform-module/template.yaml
       rules:
         - allow: [Template]
+    - type: url
+      target: https://github.com/canal-consulting/ds-team/blob/main/organization/teams.yaml
+      rules:
+        - allow: [Group]
     - type: file
       target: ../../scaffolder/docs-template/template.yaml
       rules:
         - allow: [Template, User, Group]
-    - type: github-discovery
-      target: https://github.com/canal-consulting
