@@ -2,7 +2,6 @@ import {
   ClockConfig,
   HeaderWorldClock,
   HomePageStarredEntities,
-  WelcomeTitle,
 } from '@backstage/plugin-home';
 import { Content, Header, Page } from '@backstage/core-components';
 import { HomePageSearchBar } from '@backstage/plugin-search';
@@ -64,7 +63,7 @@ export const HomePage = () => {
   return (
     <SearchContextProvider>
       <Page themeId="home">
-        <Header title={<WelcomeTitle />} pageTitleOverride="Home">
+        <Header title="Best Egg Data Science" pageTitleOverride="Home">
           <HeaderWorldClock
             clockConfigs={clockConfigs}
             customTimeFormat={timeFormat}

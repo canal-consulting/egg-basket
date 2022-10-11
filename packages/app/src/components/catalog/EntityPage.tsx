@@ -17,10 +17,8 @@ import React from 'react';
 import { Button, Grid } from '@material-ui/core';
 import {
   EntityApiDefinitionCard,
-  EntityConsumedApisCard,
   EntityConsumingComponentsCard,
   EntityHasApisCard,
-  EntityProvidedApisCard,
   EntityProvidingComponentsCard,
 } from '@backstage/plugin-api-docs';
 import {
@@ -146,18 +144,18 @@ const overviewContent = (
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
     <Grid container spacing={3} alignItems="stretch">
-   <EntitySwitch>
-      <EntitySwitch.Case if={isGithubInsightsAvailable}>
-        <Grid item md={6}>
-          <EntityGithubInsightsLanguagesCard />
-          <EntityGithubInsightsReleasesCard />
-        </Grid>
-        <Grid item md={6}>
-          <EntityGithubInsightsReadmeCard maxHeight={350} />
-        </Grid>
-      </EntitySwitch.Case>
-    </EntitySwitch>
-  </Grid>
+      <EntitySwitch>
+        <EntitySwitch.Case if={isGithubInsightsAvailable}>
+          <Grid item md={6}>
+            <EntityGithubInsightsLanguagesCard />
+            <EntityGithubInsightsReleasesCard />
+          </Grid>
+          <Grid item md={6}>
+            <EntityGithubInsightsReadmeCard maxHeight={350} />
+          </Grid>
+        </EntitySwitch.Case>
+      </EntitySwitch>
+    </Grid>
     <Grid item md={6}>
       <EntityGithubPullRequestsOverviewCard />
     </Grid>
