@@ -32,7 +32,11 @@ integrations:
   github:
     - host: github.com
       apps:
-        - $include: github-app-backstage-credentials.yaml
+        - appId: ${AUTH_GITHUB_APP_ID}
+          clientId: ${AUTH_GITHUB_CLIENT_ID}
+          clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+          privateKey: ${AUTH_GITHUB_PRIVATE_KEY}
+          webhookSecret: ${AUTH_GITHUB_WEBHOOK_SECRET}
 
 
 proxy:
