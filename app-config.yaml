@@ -74,16 +74,16 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Domain]
   locations:
     - type: url
       target: https://github.com/canal-consulting/backstage-templates/blob/main/terraform-module/template.yaml
       rules:
         - allow: [Template]
     - type: url
-      target: https://github.com/canal-consulting/ds-team/blob/main/organization/teams.yaml
+      target: https://github.com/canal-consulting/ds-team/blob/main/organization/catalog-info.yaml
       rules:
-        - allow: [Group]
+        - allow: [Group, Domain, User, Location]
     - type: file
       target: ../../scaffolder/docs-template/template.yaml
       rules:
