@@ -1,8 +1,4 @@
-import {
-  ClockConfig,
-  HeaderWorldClock,
-  HomePageStarredEntities,
-} from '@backstage/plugin-home';
+import { ClockConfig, HeaderWorldClock } from '@backstage/plugin-home';
 import { Content, Header, Page } from '@backstage/core-components';
 import { HomePageSearchBar } from '@backstage/plugin-search';
 import { SearchContextProvider } from '@backstage/plugin-search-react';
@@ -71,12 +67,10 @@ export const HomePage = () => {
         </Header>
         <Content>
           <Grid container justifyContent="center" spacing={6}>
-            <Grid container item xs={12} alignItems="center" direction="row">
-              <h1 className={classes.title}>Documentation</h1>
+            <Grid container item xs={10} alignItems="center" direction="row">
+              <h2 className={classes.title}>Egg Basket</h2>
               <p className={classes.subtitle}>
-                Explore technical documentation and developer guides, and learn
-                how to integrate your digital products with government
-                technologies
+                Explore the data science ecosystem at Best Egg.
               </p>
             </Grid>
             <Grid container item xs={12} alignItems="center" direction="row">
@@ -84,11 +78,6 @@ export const HomePage = () => {
                 classes={{ root: classes.searchBar }}
                 placeholder="Search"
               />
-            </Grid>
-            <Grid container item xs={12}>
-              <Grid item xs={12} md={6}>
-                <HomePageStarredEntities />
-              </Grid>
             </Grid>
           </Grid>
         </Content>
