@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: backstage
+  title: Backstage Website
   description: The backstage app for Best Egg Data Science
   annotations:
     backstage.io/techdocs-ref: dir:.
@@ -10,3 +11,4 @@ spec:
   type: website
   owner: ml-ops
   lifecycle: experimental
+  system: mlops-infrastructure
