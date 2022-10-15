@@ -87,7 +87,7 @@ catalog:
     - type: url
       target: https://github.com/canal-consulting/ds-team/blob/main/organization/catalog-info.yaml
       rules:
-        - allow: [Group, Domain, User, Location]
+        - allow: [Group, Domain, User, Location, Resource, API, System, Component]
     - type: file
       target: ../../scaffolder/docs-template/template.yaml
       rules:
